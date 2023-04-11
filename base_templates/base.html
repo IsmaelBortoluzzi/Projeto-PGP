@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% include 'parciais/_head.html'%}
+</head>
+
+<body class="bg-dark text-white">
+
+    {% if user.is_authenticated %}
+        <!--_nav.html-->
+            {% include 'parciais/_nav.html' %}
+        <!--/_nav.html-->
+    {% endif %}
+
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <!-- DJANGO MESSAGES -->
+            {% include 'parciais/_messages.html' %}
+
+            {% if user.is_authenticated %}
+
+                <!-- CONTENT -->
+                    {% block content %}
+                    {% endblock %}
+                <!--/CONTENT-->
+
+                <!-- _pagination.html -->
+                    {% include 'parciais/_pagination.html' %}
+                <!-- _pagination.html -->
+
+            {% else %}
+
+                {% block content_login_out %}
+                    <div class="container-center">
+                        <div class="box text-center">
+                            <h1  style="color: #000000">VOCÊ NÃO ESTÁ AUTENTICADO</h1>
+                            <br><br><br>
+                            <a href="{% url 'login'%}" style="color: #000000">Clique aqui para se autenticar de novo.</a>
+                        </div>
+                    </div>
+                {% endblock %}
+
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% include 'parciais/_footer.html' %}
+
+<script>
+    $(document).ready(function () {
+        $('.dropdown-submenu a.sub-dropdown').on("click", function (e) {
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+        });
+    });
+</script>
+
+{% block extrajs %}
+{% endblock %}
+
+</body>
+
+</html>

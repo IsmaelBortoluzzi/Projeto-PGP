@@ -1,0 +1,130 @@
+<style>
+    a:hover {
+        background: #8a5e95 !important;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+    <div class="container no-margin-left">
+        <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+{#                <div class="dropdown">#}
+{#                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"#}
+{#                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                        Relatórios#}
+{#                    </button>#}
+{#                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">#}
+{#                        <a class="dropdown-item text-white" href="{% url 'create-bills-tobe-received' %}">Adicionar</a>#}
+{#                        <a class="dropdown-item text-white" href="{% url 'list-bills-tobe-received' %}">Listar</a>#}
+{#                    </div>#}
+{#                </div>#}
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Venda (Comandas)
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu bg-primary">
+                        <li><a class="dropdown-item text-white" tabindex="-1" href="{% url 'create-order' %}">Nova comanda</a></li>
+                        <li><a class="dropdown-item text-white" tabindex="-1" href="{% url 'create-product-output' %}">Adicionar produtos</a></li>
+                        <li><a class="dropdown-item text-white" tabindex="-1" href="{% url 'list-order' %}">Listar comandas</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contas A Receber
+                    </button>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-white" href="{% url 'create-bills-tobe-received' %}">Adicionar</a>
+                        <a class="dropdown-item text-white" href="{% url 'list-bills-tobe-received' %}">Listar</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Documentos de Entrada
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu bg-primary">
+                        <li><a class="dropdown-item text-white" tabindex="-1" href="{% url 'create-entry-document' %}">Adicionar</a></li>
+                        <li><a class="dropdown-item text-white" tabindex="-1" href="{% url 'list-entry-document' %}">Listar</a></li>
+                        <li class="dropdown-submenu bg-primary">
+                            <a class="sub-dropdown no-text-decoration text-white align-drop-down-itens" tabindex="-1" href="#">Produtos de Entrada<span class="caret"></span></a>
+                            <ul class="dropdown-menu text-white bg-primary">
+                                <li><a class="dropdown-item text-white" href="{% url 'create-entry-product' %}">Adicionar</a></li>
+                                <li><a class="dropdown-item text-white" href="{% url 'list-entry-product' %}">Listar</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Contas A Pagar
+                    </button>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-white" href="{% url 'create-bills-tobe-paid' %}">Adicionar</a>
+                        <a class="dropdown-item text-white" href="{% url 'list-bills-tobe-paid' %}">Listar</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Fornecedores
+                    </button>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-white" href="{% url 'create-supplier' %}">Adicionar</a>
+                        <a class="dropdown-item text-white" href="{% url 'list-supplier' %}">Listar</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Marcas
+                    </button>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-white" href="{% url 'create-brand' %}">Adicionar</a>
+                        <a class="dropdown-item text-white" href="{% url 'list-brand' %}">Listar</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Clientes
+                    </button>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-white" href="{% url 'create-client' %}">Adicionar</a>
+                        <a class="dropdown-item text-white" href="{% url 'list-client' %}">Listar</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Produtos
+                    </button>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-white" href="{% url 'create-product' %}">Adicionar</a>
+                        <a class="dropdown-item text-white" href="{% url 'list-product' %}">Listar</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Reservas
+                    </button>
+                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-white" href="{% url 'create-grill-reserve' %}">Adicionar</a>
+                        <a class="dropdown-item text-white" href="{% url 'list-grill-reserve' %}">Listar</a>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="btn btn-primary text-white">
+                        <a href="{% url 'logout' %}" class="text-white">Logout</a>
+                    </button>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
