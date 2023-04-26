@@ -12,6 +12,8 @@ trocar o DEBUG para 1. Depois rode os comandos, um por vez:
     pip install -r requirements.txt
 
     python manage.py migrate
+    
+    python manage.py createsuperuser
 
     python manage.py runserver
 
