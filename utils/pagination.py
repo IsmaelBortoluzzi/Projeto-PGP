@@ -1,8 +1,7 @@
 import math
 
 from django.core.paginator import Paginator
-from django.views.generic import CreateView
-
+removend
 
 # python -c
 # "import string as s;from random import SystemRandom as
