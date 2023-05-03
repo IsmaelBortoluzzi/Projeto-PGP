@@ -4,6 +4,10 @@ from ordem_servico.models import OrdemServico
 
 
 class OrdemServicoForm(forms.ModelForm):
+    
+    def __init__(self):
+        super().__init__()
+    
     PROCESSO_CHOICES = (
         ('ORC', 'Orçamento'),
         ('DEV', 'Desenvolvimento'),
@@ -16,7 +20,6 @@ class OrdemServicoForm(forms.ModelForm):
         ('ASS', 'Assumida'),
         ('FIN', 'Finalizada'),
     )
-    status = forms.ChoiceField(choices=STATUS_CHOICES)
 
     def clean(self):
         demanda = self.cleaned_data.get('demanda')
@@ -25,4 +28,4 @@ class OrdemServicoForm(forms.ModelForm):
 
     class Meta:
         model = OrdemServico
-        fields = ('demanda', 'processo',)
+        fields = ('demanda', 'processo')

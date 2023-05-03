@@ -14,37 +14,10 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Venda (Comandas)
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordem De Serviço
                         <span class="caret"></span></button>
                     <ul class="dropdown-menu bg-primary">
-                        <li><a class="dropdown-item text-white" tabindex="-1" href="#">Nova comanda</a></li>
-                        <li><a class="dropdown-item text-white" tabindex="-1" href="#">Adicionar produtos</a></li>
-                        <li><a class="dropdown-item text-white" tabindex="-1" href="#">Listar comandas</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Contas A Receber
-                    </button>
-                    <div class="dropdown-menu bg-primary" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item text-white" href="#"">Adicionar</a>
-                        <a class="dropdown-item text-white" href="#">Listar</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Documentos de Entrada
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu bg-primary">
-                        <li><a class="dropdown-item text-white" tabindex="-1" href="#">Adicionar</a></li>
-                        <li><a class="dropdown-item text-white" tabindex="-1" href="#">Listar</a></li>
-                        <li class="dropdown-submenu bg-primary">
-                            <a class="sub-dropdown no-text-decoration text-white align-drop-down-itens" tabindex="-1" href="#">Produtos de Entrada<span class="caret"></span></a>
-                            <ul class="dropdown-menu text-white bg-primary">
-                                <li><a class="dropdown-item text-white" href="#">Adicionar</a></li>
-                                <li><a class="dropdown-item text-white" href="#">Listar</a></li>
-                            </ul>
-                        </li>
+                        <li><a class="dropdown-item text-white" tabindex="-1" href="{% url 'list-ordem-servico' %}">Listar Ordens</a></li>
                     </ul>
                 </div>
                 <div class="dropdown">
