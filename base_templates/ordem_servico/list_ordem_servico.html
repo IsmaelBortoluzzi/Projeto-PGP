@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="mt-5">Lista de Ordens De Serviço Ativas</h3>
+    <div class="row mt-lg-5">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped text-white">
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>DEMANDA</th>
+                        <th>PROCESSO</th>
+                        <th>STATUS</th>
+                    </tr>
+                    {% for order in ordens %}
+                        <tr>
+                            <td>{{ order.pk }}</td>
+                            <td>{{ order.demanda }}</td>
+                            <td>{{ order.processo }}</td>
+                            <td>{{ order.status }}</td>
+                            {# <td><a href="{% url 'edit-order' order.pk %}">Pagar</a></td> #}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}
