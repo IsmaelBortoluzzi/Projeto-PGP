@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="mt-5">Lista de Demandas</h3>
+    <div class="row mt-lg-5">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped text-white">
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>CLIENTE</th>
+                        <th>PRESTADOR</th>
+                        <th>QUANTIDADE DE HORAS</th>
+                    </tr>
+                    {% for demanda in demandas %}
+                        <tr>
+                            <td>{{ demanda.pk }}</td>
+                            <td>{{ demanda.cliente }}</td>
+                            <td>{{ demanda.prestador }}</td>
+                            <td>{{ demanda.quantidade_horas }}</td>
+                            {# <td><a href="{% url 'edit-order' order.pk %}">Pagar</a></td> #}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}
