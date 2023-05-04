@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="mt-5">Lista de Clientes</h3>
+    <div class="row mt-lg-5">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped text-white">
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>NOME</th>
+                        <th>DOCUMENTO</th>
+                        <th>TELEFONE</th>
+                        <th>EMAIL</th>
+                    </tr>
+                    {% for cliente in clientes %}
+                        <tr>
+                            <td>{{ cliente.pk }}</td>
+                            <td>{{ cliente.NOME }}</td>
+                            <td>{{ cliente.DOCUMENTO }}</td>
+                            <td>{{ cliente.TELEFONE }}</td>
+                            <td>{{ cliente.EMAIL }}</td>
+                            {# <td><a href="{% url 'edit-cliente' cliente.pk %}">#####</a></td> #}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}
