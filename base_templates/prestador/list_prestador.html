@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="mt-5">Lista de Prestadores Ativos</h3>
+    <div class="row mt-lg-5">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped text-white">
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>USERNAME</th>
+                        <th>NOME</th>
+                        <th>SOBRENOME</th>
+                        <th>EMAIL</th>
+                        <th>VALOR</th>
+                        <th>DOCUMENTO</th>
+                        <th>CHAVE PIX</th>
+                        <th>COMISSAO</th>
+                    </tr>
+                    {% for prestador in prestadores %}
+                        <tr>
+                            <td>{{ prestador.pk }}</td>
+                            <td>{{ prestador.user.username }}</td>
+                            <td>{{ prestador.user.first_name }}</td>
+                            <td>{{ prestador.user.last_name }}</td>
+                            <td>{{ prestador.user.email }}</td>
+                            <td>{{ prestador.valor }}</td>
+                            <td>{{ prestador.documento }}</td>
+                            <td>{{ prestador.chave_pix }}</td>
+                            <td>{{ prestador.comissao }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}
