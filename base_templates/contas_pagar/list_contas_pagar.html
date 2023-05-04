@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h3 class="mt-5">Lista de Contas à Pagar Ativas</h3>
+    <div class="row mt-lg-5">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped text-white">
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>DEMANDA</th>
+                        <th>VALOR</th>
+                        <th>DATA DE CRIAÇÃO</th>
+                        <th>STATUS</th>
+                    </tr>
+                    {% for conta_pagar in contas_pagar %}
+                        <tr>
+                            <td>{{ conta_pagar.pk }}</td>
+                            <td>{{ conta_pagar.demanda }}</td>
+                            <td>{{ conta_pagar.demanda }}</td>
+                            <td>{{ conta_pagar.data_criacao }}</td>
+                            <td>{{ conta_pagar.status }}</td>
+                            {# <td><a href="{% url 'edit-contas-pagar' order.pk %}">Pagar</a></td> #}
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}
