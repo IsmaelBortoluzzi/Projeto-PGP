@@ -4,13 +4,9 @@ from contas_pagar.models import ContasPagar
 
 class ContasPagarForm(forms.ModelForm):
     
-    def __init__(self):
-        super().__init__()
-    
     STATUS_CHOICES = (
-        ('ABE', 'Aberta'),
-        ('ASS', 'Assumida'),
-        ('FIN', 'Finalizada'),
+        ('A', 'Aberto'),
+        ('P', 'Pago'),
     )
 
     def clean(self):
