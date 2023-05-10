@@ -23,6 +23,8 @@ urlpatterns = [
     path('', include('home.urls')),
     path('ordem-servico/', include('ordem_servico.urls')),
     path('cliente/', include('cliente.urls')),
+    path('prestador/', include('prestador.urls')),
+    path('contas-pagar/', include('contas_pagar.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
 ]
