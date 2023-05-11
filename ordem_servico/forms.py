@@ -5,9 +5,6 @@ from ordem_servico.models import OrdemServico
 
 class OrdemServicoForm(forms.ModelForm):
     
-    def __init__(self):
-        super().__init__()
-    
     PROCESSO_CHOICES = (
         ('ORC', 'Orçamento'),
         ('DEV', 'Desenvolvimento'),
