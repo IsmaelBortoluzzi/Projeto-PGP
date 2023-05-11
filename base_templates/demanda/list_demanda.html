@@ -12,7 +12,8 @@
                         <th>CLIENTE</th>
                         <th>PRESTADOR</th>
                         <th>QUANTIDADE DE HORAS</th>
-                        <th>ACOES</th>
+                        <th>EDITAR</th>
+                        <th>DELETAR</th>
                     </tr>
                     {% for demanda in demandas %}
                         <tr>
@@ -21,6 +22,7 @@
                             <td>{{ demanda.prestador }}</td>
                             <td>{{ demanda.quantidade_horas }}</td>
                             <td><a href="{% url 'edit-demanda' demanda.pk %}">Editar</a></td>
+                            <td><a href="{% url 'delete-demanda' demanda.pk %}">Deletar</a></td>
                         </tr>
                     {% endfor %}
                 </table>
