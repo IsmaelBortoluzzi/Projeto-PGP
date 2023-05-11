@@ -24,8 +24,29 @@ def create_demanda(request):
         else:
             messages.error(request, 'Não foi possível salvar a demanda!')
 
-        return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('list-demanda'))
+
+def edit_demanda(request, pk):
+    if request.method == 'GET':
+        demanda = Demanda.objects.get(pk=pk)
+        context = {
+            'demanda_form': DemandaForm(instance=demanda),
+        }
+        return render(request, 'demanda/edit_demanda.html', context)
     
+    if request.method == 'POST':
+        demanda = Demanda.objects.get(pk=pk)
+        demanda_form = DemandaForm(request.POST, instance=demanda)
+
+        if demanda_form.is_valid():
+            demanda_form.save()
+
+            messages.success(request, 'Salvo Com Sucesso!')
+        else:
+            messages.error(request, 'Não foi possível salvar a demanda!')
+
+        return HttpResponseRedirect(reverse('list-demanda'))
+
 class ListDemanda(ListView):
     model = Demanda
     template_name = 'demanda/list_demanda.html'
