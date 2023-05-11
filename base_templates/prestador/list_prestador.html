@@ -17,6 +17,8 @@
                         <th>DOCUMENTO</th>
                         <th>CHAVE PIX</th>
                         <th>COMISSAO</th>
+                        <th>EDITAR</th>
+                        <th>EXCLUIR</th>
                     </tr>
                     {% for prestador in prestadores %}
                         <tr>
@@ -29,6 +31,8 @@
                             <td>{{ prestador.documento }}</td>
                             <td>{{ prestador.chave_pix }}</td>
                             <td>{{ prestador.comissao }}</td>
+                            <td><a href="{% url 'edit-prestador' prestador.pk %}">Editar</a></td>
+                            <td><a href="{% url 'delete-prestador' prestador.pk %}">Excluir</a></td>
                         </tr>
                     {% endfor %}
                 </table>
