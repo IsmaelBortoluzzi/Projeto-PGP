@@ -4,14 +4,11 @@ from demanda.models import Demanda
 
 class DemandaForm(forms.ModelForm):
 
-    def __init__(self):
-        super().__init__()
-
     def clean(self):
         descricao = self.cleaned_data.get('descricao')
         quantidade_horas = self.cleaned_data.get('quantidade_horas')
         cliente = self.cleaned_data.get('cliente')
-        return super.clean()
+        return super().clean()
     
     class Meta:
         model = Demanda

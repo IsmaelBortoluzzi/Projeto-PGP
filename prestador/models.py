@@ -8,3 +8,6 @@ class Prestador(models.Model):
     documento = models.CharField(max_length=14, unique=True)
     chave_pix = models.CharField(max_length=255, blank=True, null=True, default='')
     comissao = models.DecimalField(default=0.0, blank=True, decimal_places=2, max_digits=12)  # 12.7 = 12.7%, ou seja, divida por 100 ao usar
+
+    def __str__(self) -> str:
+        return self.user.username
