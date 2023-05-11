@@ -17,10 +17,10 @@
                     {% for cliente in clientes %}
                         <tr>
                             <td>{{ cliente.pk }}</td>
-                            <td>{{ cliente.NOME }}</td>
-                            <td>{{ cliente.DOCUMENTO }}</td>
-                            <td>{{ cliente.TELEFONE }}</td>
-                            <td>{{ cliente.EMAIL }}</td>
+                            <td>{{ cliente.nome }}</td>
+                            <td>{{ cliente.documento }}</td>
+                            <td>{{ cliente.telefone }}</td>
+                            <td>{{ cliente.email }}</td>
                             {# <td><a href="{% url 'edit-cliente' cliente.pk %}">#####</a></td> #}
                         </tr>
                     {% endfor %}
