@@ -13,6 +13,7 @@
                         <th>DOCUMENTO</th>
                         <th>TELEFONE</th>
                         <th>EMAIL</th>
+                        <th>EDITAR</th>
                     </tr>
                     {% for cliente in clientes %}
                         <tr>
@@ -21,7 +22,7 @@
                             <td>{{ cliente.documento }}</td>
                             <td>{{ cliente.telefone }}</td>
                             <td>{{ cliente.email }}</td>
-                            {# <td><a href="{% url 'edit-cliente' cliente.pk %}">#####</a></td> #}
+                            <td><a href="{% url 'edit-cliente' cliente.pk %}">EDITAR</a></td>
                         </tr>
                     {% endfor %}
                 </table>

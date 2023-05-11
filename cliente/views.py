@@ -59,7 +59,6 @@ def edit_cliente(request, pk):
         if cliente_form.is_valid():
             updated_cliente = cliente_form.save(commit=False)
             updated_cliente.id = pk
-            updated_cliente.data_criacao = Cliente.objects.get(pk=pk).data_criacao
             updated_cliente.save(force_update=True)
 
             messages.success(request, 'Editado Com Sucesso!')
