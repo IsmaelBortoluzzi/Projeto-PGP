@@ -46,6 +46,12 @@ def edit_demanda(request, pk):
             messages.error(request, 'Não foi possível salvar a demanda!')
 
         return HttpResponseRedirect(reverse('list-demanda'))
+    
+def delete_demanda(request, pk):
+    if request.method == 'GET':
+        Demanda.objects.filter(pk=pk).delete()
+        messages.success(request, 'Deletado Com Sucesso!')
+        return HttpResponseRedirect(reverse('list-demanda'))
 
 class ListDemanda(ListView):
     model = Demanda
