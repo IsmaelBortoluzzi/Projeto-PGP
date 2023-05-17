@@ -12,4 +12,4 @@ class DemandaForm(forms.ModelForm):
     
     class Meta:
         model = Demanda
-        fields = ('cliente', 'descricao', 'quantidade_horas')
+        fields = ('cliente', 'prestador', 'descricao', 'quantidade_horas')
