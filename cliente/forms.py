@@ -11,7 +11,7 @@ class ClienteForm(forms.ModelForm):
         telefone = self.cleaned_data.get('telefone')
         email = self.cleaned_data.get('email')
         return super().clean()
-
+    
     class Meta:
         model = Cliente
         fields = ('nome','documento','telefone','email')
