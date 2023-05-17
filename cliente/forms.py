@@ -4,10 +4,6 @@ from cliente.models import Cliente
 
 
 class ClienteForm(forms.ModelForm):
-    
-    #def __init__(self):
-        #super().__init__()
-
 
     def clean(self):
         nome = self.cleaned_data.get('nome')
