@@ -4,7 +4,7 @@ from cliente.models import Cliente
 
 
 class ClienteForm(forms.ModelForm):
-    
+
     def clean(self):
         nome = self.cleaned_data.get('nome')
         documento = self.cleaned_data.get('documento')

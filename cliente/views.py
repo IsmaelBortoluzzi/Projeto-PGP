@@ -42,3 +42,29 @@ class ListCliente(ListView):
     def get_queryset(self):
         self.codigo = self.request.GET.get('codigo', None)
         return super().get_queryset()
+    
+    
+
+def edit_cliente(request, pk):
+
+    if request.method == 'GET':
+        context = {
+            'cliente_form': ClienteForm(instance=Cliente.objects.get(pk=pk))
+        }
+        return render(request, 'cliente/edit_cliente.html', context)
+
+    if request.method == 'POST':
+        cliente_form = ClienteForm(request.POST)
+
+        if cliente_form.is_valid():
+            updated_cliente = cliente_form.save(commit=False)
+            updated_cliente.id = pk
+            updated_cliente.save(force_update=True)
+
+            messages.success(request, 'Editado Com Sucesso!')
+
+            return HttpResponseRedirect(reverse('list-cliente'))
+
+        else:
+            messages.error(request, 'Erros nos dados!')
+            return render(request, 'cliente/edit_cliente.html', {'cliente_form': cliente_form})
