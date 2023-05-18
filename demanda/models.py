@@ -9,3 +9,6 @@ class Demanda(models.Model):
     prestador = models.ForeignKey(Prestador,  null=True, on_delete=models.SET_NULL)
     descricao = models.TextField(default='')
     quantidade_horas = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f'{self.id} - {self.prestador}'

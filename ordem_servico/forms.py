@@ -7,13 +7,14 @@ class OrdemServicoForm(forms.ModelForm):
     
     PROCESSO_CHOICES = (
         ('ORC', 'Orçamento'),
+        ('FAT', 'Faturamento'),
         ('DEV', 'Desenvolvimento'),
         ('PAG', 'Pagamento'),
+        ('FIN', 'Finalizado')
     )
     processo = forms.ChoiceField(choices=PROCESSO_CHOICES)
 
     STATUS_CHOICES = (
-        ('ABE', 'Aberta'),
         ('ASS', 'Assumida'),
         ('FIN', 'Finalizada'),
     )

@@ -6,6 +6,9 @@ from django.views.generic import ListView
 
 from demanda.forms import DemandaForm
 from demanda.models import Demanda
+from ordem_servico.models import OrdemServico
+from prestador.models import Prestador
+
 
 def create_demanda(request):
     if request.method == 'GET':
@@ -67,3 +70,23 @@ class ListDemanda(ListView):
     def get_queryset(self):
         self.codigo = self.request.GET.get('codigo', None)
         return super().get_queryset()
+
+
+def assumir_demanda(request, demanda_pk):
+    if request.method != 'GET':
+        return HttpResponseRedirect(reverse('list-demanda'))
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('list-demanda'))
+
+    demanda = Demanda.objects.get(pk=demanda_pk)
+
+    OrdemServico.objects.create(
+        demanda=demanda,
+        processo='ORC',  # Orçamento
+        status='ASS'  # Assumida
+    )
+
+    demanda.prestador = Prestador.objects.get(user=request.user)
+    demanda.save()
+
+    return HttpResponseRedirect(reverse('list-demanda'))
